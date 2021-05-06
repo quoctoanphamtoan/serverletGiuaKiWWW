@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\DELL\Desktop\workspace\JAVAGIUAKIA\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3890174552.index
+2386794547.index
+1599728714.index
+2762681367.index
+1243173724.index
+1925516889.index
+3839057709.index

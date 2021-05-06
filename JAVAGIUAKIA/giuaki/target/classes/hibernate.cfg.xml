@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-confiuration >
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=giuaki111</property>
+		<property name="hibernate.connection.username">sa</property>
+		<property name="hibernate.connection.password">toilatoi123</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hbm2ddl.auto">update</property> 
+		<mapping class="com.giuaki.entity.Person" />
+		<mapping class="com.giuaki.entity.Card" />
+	</session-factory>
+</hibernate-configuration>
+

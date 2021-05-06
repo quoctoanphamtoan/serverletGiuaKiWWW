@@ -1,0 +1,49 @@
+package com.giuaki.dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import com.giuaki.entity.Card;
+import com.giuaki.util.hibernateUtil;
+
+public class CardDao {
+	public List<Card> getAllCard(int personId) {
+		List<Card> list = null;
+		Transaction transaction = null;
+		try (Session session = hibernateUtil.getSessionFactory().openSession()) {
+			transaction = session.beginTransaction();
+			Query<Card> query = session.createQuery("FROM Card where person_id = "+personId, Card.class);
+			list = query.getResultList();
+			transaction.commit();
+		} catch (Exception e) {
+			transaction.rollback();
+		}
+		return list;	
+	}
+	public void addCard(int personId,Card card) {
+		List<Card> list = null;
+		Transaction transaction = null;
+		try (Session session = hibernateUtil.getSessionFactory().openSession()) {
+			transaction = session.beginTransaction();
+			Query<Card> query = session.createQuery("FROM Card where person_id = "+personId, Card.class);
+			list = query.getResultList();
+			transaction.commit();
+		} catch (Exception e) {
+			transaction.rollback();
+		}
+		return list;	
+	}
+	
+	
+	
+	
+	
+public static void main(String[] args) {
+	new CardDao().getAllCard(1).forEach(x->{
+		System.out.println(x);
+	});
+}
+}

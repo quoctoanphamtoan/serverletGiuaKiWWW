@@ -1,0 +1,11 @@
+package com.giuaki.dao;
+
+import java.util.List;
+
+import com.giuaki.entity.Person;
+
+public class PersonDao {
+	public List<Person> getAllPerson() {
+		
+	}
+}

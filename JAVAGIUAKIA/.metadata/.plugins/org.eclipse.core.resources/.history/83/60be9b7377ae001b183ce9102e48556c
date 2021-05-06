@@ -1,0 +1,5 @@
+package com.giuaki.entity;
+
+public class Card {
+
+}

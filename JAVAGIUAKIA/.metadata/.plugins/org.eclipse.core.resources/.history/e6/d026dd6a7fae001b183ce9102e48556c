@@ -1,0 +1,69 @@
+package com.giuaki.controller;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.giuaki.dao.PersonDao;
+import com.giuaki.entity.Person;
+
+///....../person/add
+///....../person/delete
+//urlPatterns ("/person/*")
+@WebServlet("/person/*")
+public class PersonController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private PersonDao personDao;
+
+	public PersonController() {
+		personDao = new PersonDao();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String url = request.getRequestURL().substring(29).toString();
+		System.out.println(url);
+		switch (url) {
+		case "person":
+			showFormPerson(request, response);
+			break;
+//person/add
+		case "person/add":
+			showFromAdPerson(request, response);
+			break;	
+			
+			
+		default:
+			break;
+		}
+	}
+
+	private void showFromAdPerson(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void showFormPerson(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		
+		 
+		request.setAttribute("listPerson", personDao.getAllPerson());
+		//personDao.getAllPerson() là list person
+		//List<Person> list = personDao.getAllPerson();
+		//request.setAttribute("listPerson", list);
+		request.getRequestDispatcher("/WEB-INF/views/Person.jsp").forward(request, response);
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

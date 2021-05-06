@@ -1,0 +1,11 @@
+package com.giuaki.dao;
+
+import java.util.List;
+
+import com.giuaki.entity.Card;
+
+public class CardDao {
+	public List<Card> getAllCard(int personId) {
+		
+	}
+}

@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+C:\Users\DELL\Desktop\workspace\JAVAGIUAKIA\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3049935359.index
+\giuaki\src\main\java
+C:\Users\DELL\Desktop\workspace\JAVAGIUAKIA\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2386794547.index
+\giuaki\src\main\java

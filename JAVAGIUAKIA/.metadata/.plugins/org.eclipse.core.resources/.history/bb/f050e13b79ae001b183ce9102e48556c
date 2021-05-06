@@ -1,0 +1,28 @@
+package com.giuaki.dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import com.giuaki.entity.Person;
+import com.giuaki.util.hibernateUtil;
+
+public class PersonDao {
+	public List<Person> getAllPerson() {
+		List<Person> list = null;
+		Transaction transaction = null;
+		try (Session session = hibernateUtil.getSessionFactory().openSession()) {
+			transaction = session.beginTransaction();
+			Query<Person> query = session.createQuery("FROM Person", Person.class);
+			list = query.getResultList();
+			transaction.commit();
+		} catch (Exception e) {
+			transaction.rollback();
+		}
+
+		return list;
+
+	}
+}

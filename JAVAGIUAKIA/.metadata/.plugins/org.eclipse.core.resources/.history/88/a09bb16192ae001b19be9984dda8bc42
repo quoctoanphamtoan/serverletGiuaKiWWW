@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>giuaki</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<description></description>
+		<display-name>Person</display-name>
+		<servlet-name>Person</servlet-name>
+		<servlet-class>com.giuaki.controller.Person</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Person</servlet-name>
+		<url-pattern>/Person</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>CardController</display-name>
+		<servlet-name>CardController</servlet-name>
+		<servlet-class>com.giuaki.controller.CardController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CardController</servlet-name>
+		<url-pattern>/CardController</url-pattern>
+	</servlet-mapping>
+
+
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Wildcard means whole app requires authentication</web-resource-name>
+			<url-pattern>/</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+
+</web-app>
